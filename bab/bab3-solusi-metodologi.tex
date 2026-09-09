@@ -1,0 +1,102 @@
+\chapter{SOLUSI DAN METODOLOGI}
+
+\section{Solusi yang Ditawarkan}
+Solusi yang ditawarkan adalah Welya, aplikasi web dan desktop asisten
+akademik berbasis
+AI dengan fitur utama:
+\begin{enumerate}
+  \item Deteksi tugas otomatis dari email kampus (integrasi Gmail);
+  \item Pemecahan tugas menjadi subtask beserta estimasi waktu oleh AI;
+  \item Tampilan kalender tenggat tugas dan jadwal kuliah (integrasi
+    Google Calendar dan Google Tasks);
+  \item Pencarian cerdas atas tugas, materi, dan catatan;
+  \item Dasbor progres, tenggat, dan prioritas harian.
+\end{enumerate}
+
+\section{Target Luaran}
+\begin{enumerate}
+  \item Aplikasi Welya (web dan desktop) yang berfungsi penuh dan siap
+    diuji coba;
+  \item Laporan tugas akhir;
+  \item Artikel publikasi sesuai ketentuan BAB XIV panduan tugas akhir;
+  \item Pendaftaran Hak Kekayaan Intelektual (HKI).
+\end{enumerate}
+
+\section{Pihak yang Terlibat}
+\begin{enumerate}
+  \item Mahasiswa sebagai pengembang produk;
+  \item Dosen pembimbing sebidang ilmu dari program studi;
+  \item Mahasiswa pengguna sebagai responden uji coba.
+\end{enumerate}
+
+\section{Tahapan Pengembangan}
+Pengembangan dilakukan secara iteratif dengan mengadaptasi metode
+\emph{prototype}, yang memungkinkan perbaikan bertahap berdasarkan umpan
+balik pengguna \parencite{aprilisa2024}, melalui tahapan berikut:
+\begin{enumerate}
+  \item \textbf{Analisis kebutuhan}: identifikasi permasalahan dan
+    kebutuhan pengguna melalui survei kepada mahasiswa;
+  \item \textbf{Perancangan sistem}: perancangan arsitektur, basis data,
+    alur integrasi layanan Google, dan antarmuka pengguna;
+  \item \textbf{Implementasi}: pembangunan aplikasi web dan desktop beserta
+    komponen AI untuk analisis email dan penyusunan subtask;
+  \item \textbf{Pengujian}: pengujian fungsional serta uji coba kepada
+    pengguna terbatas;
+  \item \textbf{Evaluasi}: pengukuran kebermanfaatan dan kemudahan
+    penggunaan, kemudian perbaikan berdasarkan masukan pengguna.
+\end{enumerate}
+
+\section{Deskripsi Rancangan Produk}
+Secara garis besar, arsitektur Welya terdiri atas empat komponen utama:
+\begin{enumerate}
+  \item \textbf{Frontend (aplikasi web dan desktop)}: antarmuka dasbor,
+    daftar tugas,
+    kalender, dan pencarian yang diakses melalui peramban;
+  \item \textbf{Backend}: layanan API yang mengelola autentikasi,
+    penyimpanan data tugas dan jadwal, serta orkestrasi proses analisis;
+  \item \textbf{Komponen AI}: modul yang memanfaatkan model bahasa besar
+    untuk menganalisis isi email, mengekstraksi tugas beserta tenggatnya,
+    dan menyusun subtask dengan estimasi waktu pengerjaan;
+  \item \textbf{Integrasi layanan Google}: koneksi ke Gmail, Google
+    Tasks, dan Google Calendar melalui API resmi dengan otorisasi OAuth
+    2.0 \parencite{arianto2025}, sehingga data tetap berada dalam kendali
+    pengguna.
+\end{enumerate}
+
+Alur kerja sistem dimulai ketika pengguna menghubungkan akun Google-nya.
+Sistem membaca email kampus secara berkala, komponen AI menyaring email
+yang mengandung penugasan, kemudian tugas yang terdeteksi ditambahkan ke
+daftar tugas beserta subtask dan estimasi waktunya. Tenggat tugas dan
+jadwal kuliah disinkronkan dengan Google Calendar dan ditampilkan pada
+dasbor beserta prioritas harian. Gambaran rancangan yang lebih lengkap
+disajikan pada Lampiran 1.
+
+\section{Prosedur Kerja}
+\begin{enumerate}
+  \item Menyusun instrumen survei kebutuhan dan menyebarkannya kepada
+    mahasiswa;
+  \item Merumuskan spesifikasi kebutuhan fungsional dan non-fungsional
+    berdasarkan hasil survei;
+  \item Merancang arsitektur sistem, skema basis data, dan purwarupa
+    antarmuka;
+  \item Mengimplementasikan fitur secara bertahap dengan mengacu pada
+    praktik pengembangan aplikasi manajemen tugas berbasis web
+    \parencite{panjaitan2025}, dimulai dari integrasi akun Google, deteksi
+    tugas, hingga dasbor dan pencarian;
+  \item Melakukan pengujian fungsional setiap akhir iterasi;
+  \item Melaksanakan uji coba kepada responden mahasiswa dan mengukur
+    kemudahan penggunaan;
+  \item Menganalisis hasil evaluasi dan menyusun laporan.
+\end{enumerate}
+
+\section{Rencana Evaluasi}
+Evaluasi mencakup tiga aspek. Pertama, pengujian fungsional
+(\emph{black-box}) untuk setiap fitur pada akhir tiap iterasi. Kedua,
+pengukuran kinerja komponen AI: ketepatan deteksi tugas dari email diukur
+dengan \emph{precision} dan \emph{recall} terhadap sampel email kampus
+yang dilabeli secara manual, dengan target minimal 80\% untuk keduanya.
+Ketiga, kuesioner \emph{System Usability Scale} (SUS) \parencite{dyayu2023}
+kepada 20--30 responden mahasiswa; skor SUS di atas 68 menandakan
+kebergunaan di atas rata-rata dan menjadi target minimal produk ini.
+Hasil evaluasi menjadi dasar perbaikan produk sebelum laporan
+akhir disusun.

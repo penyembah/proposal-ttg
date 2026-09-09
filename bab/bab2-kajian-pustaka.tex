@@ -1,0 +1,116 @@
+\chapter{KAJIAN PUSTAKA}
+
+\section{Manajemen Tugas dan Waktu Akademik}
+Manajemen waktu adalah proses merencanakan dan mengendalikan penggunaan
+waktu untuk mencapai tujuan tertentu. Dalam konteks akademik, perilaku
+manajemen waktu meliputi penetapan tujuan dan prioritas, mekanisme
+perencanaan (membuat daftar tugas dan jadwal), serta preferensi terhadap
+keteraturan. Penelitian pada mahasiswa di Indonesia menunjukkan bahwa
+perilaku manajemen waktu berpengaruh positif dan signifikan terhadap
+prestasi akademik mahasiswa \parencite{kamilatunnisa2025}.
+
+Di sisi lain, prokrastinasi akademik --- menunda pekerjaan meskipun sadar
+akan konsekuensinya --- merupakan kegagalan regulasi diri yang umum
+terjadi pada mahasiswa; semakin rendah regulasi diri mahasiswa, semakin
+tinggi kecenderungan prokrastinasi akademiknya \parencite{fadila2024}. Salah
+satu pemicunya adalah beban kognitif dalam
+mengingat dan mengorganisasi banyak tugas dari berbagai sumber. Sistem
+yang mampu mengumpulkan, memecah, dan menjadwalkan tugas secara otomatis
+berpotensi menurunkan beban tersebut dan mendorong perilaku belajar yang
+lebih teratur.
+
+\section{Kecerdasan Buatan dan Model Bahasa Besar}
+Kecerdasan buatan (\emph{artificial intelligence}) adalah bidang ilmu yang
+mempelajari sistem cerdas yang mampu memahami lingkungannya dan mengambil
+tindakan untuk mencapai tujuan tertentu. Salah satu inovasinya yang
+berkembang paling pesat adalah model bahasa besar (\emph{large language
+model}/LLM), yaitu model bahasa berbasis AI yang mampu memahami dan
+menghasilkan teks dalam bahasa alami \parencite{johan2026}.
+
+Kajian terhadap pemanfaatan LLM di perguruan tinggi menunjukkan bahwa LLM
+dapat membantu mahasiswa memahami materi perkuliahan, memperoleh
+informasi dengan cepat, mendukung pembelajaran mandiri, serta
+meningkatkan interaksi dalam proses belajar apabila digunakan secara
+bijak dan didukung literasi digital yang memadai \parencite{johan2026}.
+Chatbot berbasis AI juga terbukti berperan sebagai asisten virtual yang
+personal, responsif, dan adaptif dalam pembelajaran digital, termasuk
+mendukung pengembangan keterampilan manajemen waktu dan kemandirian
+belajar \parencite{hidayah2025}.
+Dalam Welya, kemampuan ini dimanfaatkan untuk tiga hal: (1) menyaring
+email kampus yang mengandung penugasan, (2) mengekstraksi atribut tugas
+seperti judul, mata kuliah, dan tenggat, serta (3) memecah tugas menjadi
+subtask dengan estimasi waktu pengerjaan.
+
+\section{Aplikasi Web, Aplikasi Desktop, dan Integrasi Layanan Google}
+Aplikasi web dipilih karena dapat diakses lintas perangkat tanpa
+instalasi, sementara versi desktop dibangun menggunakan kerangka kerja
+Tauri yang membungkus antarmuka web yang sama menjadi aplikasi native
+yang ringan. Penelitian sejenis menunjukkan bahwa aplikasi manajemen tugas
+berbasis web dengan fitur pengingat otomatis, prioritas, dan kalender
+interaktif mampu meningkatkan disiplin dan efisiensi pengelolaan waktu
+mahasiswa \parencite{panjaitan2025}.
+
+Integrasi dengan ekosistem Google dilakukan melalui API resmi Gmail,
+Google Tasks, dan Google Calendar. Pemanfaatan Google Calendar untuk
+otomatisasi penjadwalan dan pengingat tenggat terbukti meningkatkan
+kepatuhan terhadap tenggat waktu sekaligus mengurangi kesalahan
+penjadwalan manual \parencite{setiawan2025}, dan integrasi Google Calendar
+API mampu menyinkronkan tugas ke kalender pribadi pengguna secara
+\emph{real-time} \parencite{moedjahedy2025}. Otorisasi akses data pengguna
+menggunakan protokol OAuth 2.0, standar industri yang memungkinkan
+aplikasi pihak ketiga mengakses sumber daya pengguna secara terbatas
+tanpa menyimpan kata sandi; penerapannya terbukti meningkatkan keamanan
+autentikasi secara signifikan \parencite{arianto2025}. Dengan pendekatan ini,
+data
+tetap berada di akun Google milik pengguna dan aplikasi hanya meminta
+cakupan izin yang diperlukan.
+
+Karena sistem memproses isi email pengguna, aspek privasi menjadi
+perhatian utama dalam perancangan. Akses data hanya dilakukan setelah
+persetujuan eksplisit pengguna, cakupan izin (\emph{scope}) OAuth
+dibatasi seminimal mungkin, data yang disimpan hanya hasil ekstraksi
+tugas --- bukan salinan isi email --- dan pengguna dapat mencabut akses
+kapan saja. Praktik ini sejalan dengan prinsip pelindungan data pribadi
+sebagaimana diatur dalam Undang-Undang Nomor 27 Tahun 2022 tentang
+Pelindungan Data Pribadi.
+
+\section{\emph{System Usability Scale} (SUS)}
+SUS adalah instrumen baku berisi sepuluh pernyataan berskala Likert untuk
+mengukur kebergunaan suatu sistem secara cepat dan andal, dan telah
+banyak digunakan dalam evaluasi aplikasi di Indonesia \parencite{dyayu2023}.
+Skor akhir berada pada rentang 0--100 dengan nilai 68 sebagai ambang
+rata-rata industri. Instrumen ini digunakan pada tahap evaluasi untuk
+mengukur kemudahan penggunaan Welya oleh mahasiswa.
+
+\section{Penelitian dan Produk Sejenis}
+Beberapa produk manajemen tugas telah tersedia secara luas, di antaranya
+Google Tasks, Todoist, dan Notion. Ketiganya andal sebagai pencatat tugas,
+tetapi memiliki keterbatasan dalam konteks akademik mahasiswa Indonesia,
+sebagaimana diringkas pada Tabel~\ref{tab:perbandingan}.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Perbandingan Welya dengan produk sejenis}
+  \label{tab:perbandingan}
+  \small
+  \begin{tabular}{@{}p{4.2cm}cccc@{}}
+    \toprule
+    Fitur & Google Tasks & Todoist & Notion & Welya \\
+    \midrule
+    Pencatatan tugas manual        & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ \\
+    Deteksi tugas dari email       & --           & --           & --           & $\checkmark$ \\
+    Subtask + estimasi waktu (AI)  & --           & --           & --           & $\checkmark$ \\
+    Kalender jadwal kuliah         & --           & $\checkmark$ & $\checkmark$ & $\checkmark$ \\
+    Pencarian cerdas (AI)          & --           & --           & $\checkmark$ & $\checkmark$ \\
+    Berfokus konteks akademik      & --           & --           & --           & $\checkmark$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Kesenjangan (\emph{gap}) yang mendasari inovasi ini adalah belum adanya
+asisten akademik yang mendeteksi tugas secara otomatis dari email kampus
+berbahasa Indonesia, memecahnya menjadi subtask beserta estimasi waktu,
+dan menyatukannya dengan jadwal kuliah dalam satu dasbor. Welya mengisi
+kesenjangan tersebut dengan menggabungkan LLM dan integrasi layanan
+Google dalam satu produk yang dirancang khusus untuk alur kerja
+mahasiswa.

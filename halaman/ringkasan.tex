@@ -1,0 +1,53 @@
+\chapter*{Ringkasan Proposal}
+\addcontentsline{toc}{chapter}{RINGKASAN PROPOSAL}
+
+% Ringkasan maksimum satu halaman, ditulis dengan jarak satu spasi.
+\begin{singlespace}
+  Mahasiswa kerap kesulitan mengelola tugas, jadwal kuliah, dan informasi
+  akademik yang tersebar di berbagai kanal seperti email kampus, grup pesan,
+  sistem pembelajaran daring, dan pengumuman dosen. Ketidakteraturan ini
+  berdampak pada terlewatnya tenggat, keterlambatan pengumpulan tugas,
+  meningkatnya prokrastinasi akademik, dan menurunnya kualitas belajar.
+  Aplikasi manajemen tugas yang umum digunakan masih menuntut pengguna
+  memasukkan seluruh data secara manual, padahal sumber informasi tugas
+  terbesar mahasiswa justru berada di email kampus yang tidak terstruktur.
+  Proposal ini mengusulkan pengembangan \textbf{Welya}, sebuah produk
+  digital berupa asisten akademik berbasis kecerdasan buatan (AI) yang
+  membantu mahasiswa mengelola tugas, jadwal, email kampus, dan kerja
+  kelompok dalam satu tempat.
+
+  Welya terintegrasi dengan Gmail, Google Tasks, dan Google Calendar melalui
+  API resmi dengan otorisasi OAuth 2.0. Sistem memanfaatkan model bahasa
+  besar (\emph{large language model}/LLM) untuk menganalisis email kampus
+  secara otomatis, mendeteksi email yang mengandung penugasan, mengekstraksi
+  atribut tugas seperti judul, mata kuliah, dan tenggat, lalu memecah tugas
+  menjadi subtask beserta estimasi waktu pengerjaannya. Seluruh tenggat dan
+  jadwal kuliah disajikan dalam satu dasbor dengan prioritas harian,
+  dilengkapi kalender tersinkron, pencarian cerdas atas tugas, materi, dan
+  catatan, serta ruang kerja kolaborasi untuk kerja kelompok. Kebaruan
+  produk ini terletak pada deteksi tugas otomatis dari email kampus
+  berbahasa Indonesia --- kemampuan yang belum tersedia pada aplikasi
+  manajemen tugas populer seperti Google Tasks, Todoist, maupun Notion.
+
+  Pengembangan dilakukan secara iteratif dengan metode \emph{prototype}
+  melalui tahapan analisis kebutuhan, perancangan sistem, implementasi,
+  pengujian, dan evaluasi kepada pengguna. Produk dibangun sebagai aplikasi
+  web sekaligus aplikasi desktop sehingga dapat diakses lintas perangkat.
+  Evaluasi mencakup pengujian fungsional \emph{black-box}, pengukuran
+  ketepatan deteksi tugas dengan \emph{precision} dan \emph{recall}
+  bertarget minimal 80\%, serta kuesioner \emph{System Usability Scale}
+  (SUS) kepada 20--30 responden mahasiswa dengan target skor di atas 68.
+
+  Target luaran tugas akhir ini berupa aplikasi Welya (web dan desktop)
+  yang berfungsi penuh dan siap diuji coba, laporan tugas akhir, artikel
+  publikasi ilmiah, serta pendaftaran Hak Kekayaan Intelektual (HKI).
+  Kehadiran Welya diharapkan membantu mahasiswa mengelola aktivitas
+  akademiknya secara lebih teratur sekaligus menjadi contoh penerapan
+  teknologi AI dalam mendukung produktivitas akademik di lingkungan
+  perguruan tinggi.
+
+  \vspace{0.5em}
+  \noindent\textbf{Kata kunci}: asisten akademik, kecerdasan buatan,
+  manajemen tugas, model bahasa besar, integrasi Google.
+\end{singlespace}
+\clearpage

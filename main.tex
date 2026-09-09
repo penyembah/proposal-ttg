@@ -1,0 +1,115 @@
+\documentclass[12pt, a4paper]{report}
+
+% ==== Paket dasar ====
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[indonesian]{babel}
+\usepackage{times}
+
+% ==== Layout halaman ====
+\usepackage[top=4cm, left=4cm, bottom=3cm, right=3cm,
+headheight=15pt]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+% Indentasi alinea 6 ketukan (panduan: 0,5 inci = 1,27 cm)
+\setlength{\parindent}{1.27cm}
+% Nomor halaman arab di kanan atas; halaman awal bab tetap tengah bawah
+\usepackage{fancyhdr}
+\fancyhf{}
+\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+% ==== Gambar, tabel, dan lainnya ====
+\usepackage{graphicx}
+\graphicspath{{gambar/}}
+\usepackage{booktabs}
+\usepackage{caption}
+% Judul tabel/gambar font 11, dua ketukan setelah nomor, baris lanjutan menggantung
+\captionsetup{font=small, labelsep=quad, format=hang}
+% Nomor tabel angka arab per bab (Tabel 2.1); nomor gambar berurutan global
+\renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
+\counterwithout{figure}{chapter}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+
+% ==== Daftar pustaka ====
+\usepackage{csquotes}
+\usepackage[backend=biber, style=authoryear, maxcitenames=2,
+  maxbibnames=99, dashed=false, uniquename=false,
+uniquelist=false]{biblatex}
+% Lokalisasi Indonesia disediakan lewat indonesian.lbx di folder proyek
+% Format sitasi (Penulis, Tahun) seperti APA
+\renewcommand*{\nameyeardelim}{\addcomma\space}
+% Daftar pustaka spasi 1 dengan jarak antarentri 6 pt
+\setlength{\bibitemsep}{6pt}
+\addbibresource{daftar-pustaka.bib}
+
+% ==== Format judul bab ====
+\usepackage{titlesec}
+\usepackage{titletoc}
+\renewcommand{\thechapter}{\Roman{chapter}}
+\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
+\titleformat{\chapter}[display]
+{\centering\bfseries\normalsize}
+{BAB \thechapter}{0.5em}{\MakeUppercase}
+\titlespacing*{\chapter}{0pt}{0pt}{2em}
+\titleformat{\section}{\bfseries\normalsize}{\thesection}{1em}{}
+\titleformat{\subsection}{\bfseries\normalsize}{\thesubsection}{1em}{}
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+\titlespacing*{\subsection}{0pt}{12pt}{6pt}
+
+% ==== Format daftar isi ====
+\titlecontents{chapter}[0pt]
+{\addvspace{1em}\bfseries}
+{BAB \thecontentslabel\ }
+{}
+{\titlerule*[0.7pc]{.}\contentspage}
+
+% ==== Metadata ====
+\newcommand{\judul}{Welya: Asisten Akademik Berbasis Kecerdasan Buatan untuk Manajemen Tugas dan Jadwal Kuliah Mahasiswa}
+\newcommand{\namapenulis}{Jouska Brillian Putra Purnomo}
+\newcommand{\nim}{220113003}
+\newcommand{\prodi}{S1 Teknologi Informasi}
+\newcommand{\fakultas}{Fakultas Sains dan Teknologi}
+\newcommand{\universitas}{Universitas Harapan Bangsa}
+
+\begin{document}
+
+% ==== Halaman judul ====
+\input{halaman/sampul}
+
+% ==== Halaman awal (nomor romawi) ====
+\pagenumbering{roman}
+\input{halaman/pengesahan}
+\tableofcontents
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{DAFTAR GAMBAR}
+\listoffigures
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{DAFTAR TABEL}
+\listoftables
+\clearpage
+\input{halaman/ringkasan}
+
+% ==== Isi (nomor arab) ====
+\pagenumbering{arabic}
+\pagestyle{fancy}
+\input{bab/bab1-pendahuluan}
+\input{bab/bab2-kajian-pustaka}
+\input{bab/bab3-solusi-metodologi}
+
+% ==== Daftar pustaka ====
+\begin{singlespace}
+  \printbibliography[title={DAFTAR PUSTAKA}, heading=bibintoc]
+\end{singlespace}
+
+% ==== Lampiran ====
+\input{lampiran/lampiran}
+
+\end{document}

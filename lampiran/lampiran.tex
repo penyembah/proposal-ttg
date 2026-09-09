@@ -1,0 +1,134 @@
+\chapter*{Lampiran}
+\addcontentsline{toc}{chapter}{LAMPIRAN}
+
+\section*{Lampiran 1. Gambaran Inovasi/TTG}
+Skema arsitektur sistem Welya disajikan pada Gambar~\ref{gbr:arsitektur}.
+Sistem terdiri atas antarmuka yang diakses pengguna melalui browser web
+maupun aplikasi desktop (dibangun dengan Tauri), layanan API di sisi
+server, komponen AI berbasis model bahasa besar, basis data, serta
+integrasi resmi dengan layanan Google melalui otorisasi OAuth 2.0.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[
+      font=\small,
+      kotak/.style={draw=black!60, rounded corners, align=center,
+      fill=blue!6, minimum height=1.3cm, text width=3.1cm},
+      eksternal/.style={kotak, fill=green!8},
+      data/.style={kotak, fill=orange!10},
+      panah/.style={-{Stealth[length=2.5mm]}, semithick},
+      ket/.style={font=\scriptsize, align=center, fill=white, inner sep=1pt}
+    ]
+    \node[kotak] (pengguna) {\textbf{Pengguna}\\browser web /\\aplikasi desktop};
+    \node[kotak, right=1.1cm of pengguna] (frontend)
+    {\textbf{Frontend}\\web React \emph{app.welya.biz.id}\\desktop (Tauri)};
+    \node[kotak, right=1.1cm of frontend] (backend)
+    {\textbf{Backend}\\API server Node.js\\\emph{api.welya.biz.id}};
+    \node[eksternal, above=1.1cm of backend] (ai)
+    {\textbf{Komponen AI}\\model bahasa besar\\(Azure OpenAI / Gemini)};
+    \node[data, below=1.1cm of backend] (db)
+    {\textbf{Basis Data}\\PostgreSQL};
+    \node[eksternal, below=1.1cm of frontend] (google)
+    {\textbf{Layanan Google}\\Gmail $\cdot$ Google Tasks\\Google Calendar};
+
+    \draw[panah] (pengguna) -- node[ket, above] {HTTPS} (frontend);
+    \draw[panah] (frontend) -- node[ket, above] {REST API} (backend);
+    \draw[panah, <->] (backend) -- node[ket, right] {analisis email,\\subtask, estimasi} (ai);
+    \draw[panah, <->] (backend) -- node[ket, right] {baca/tulis\\data} (db);
+    \draw[panah, <->] (backend.south west) -- node[ket, sloped, above]
+    {OAuth 2.0} (google.north east);
+  \end{tikzpicture}
+  \caption{Skema arsitektur sistem Welya}
+  \label{gbr:arsitektur}
+\end{figure}
+
+Alur kerja sistem: pengguna menghubungkan akun Google melalui OAuth 2.0;
+backend membaca email kampus dari Gmail secara berkala; komponen AI
+menyaring email yang mengandung penugasan, mengekstraksi atribut tugas,
+dan memecahnya menjadi subtask dengan estimasi waktu; hasilnya disimpan
+di basis data, disinkronkan ke Google Tasks dan Google Calendar, lalu
+ditampilkan pada dasbor pengguna.
+
+Tampilan antarmuka Welya disajikan pada
+Gambar~\ref{gbr:dasbor}--\ref{gbr:workspace}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{dashboard-light}
+  \caption{Tampilan dasbor Welya: sapaan personal, jadwal hari ini yang
+    tersinkron dari Google Calendar, deadline terdekat hasil ekstraksi
+  otomatis dari Gmail, serta rekomendasi prioritas dari AI}
+  \label{gbr:dasbor}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{task}
+  \caption{Tampilan papan tugas (Tugas Saya) dengan status, prioritas,
+  subtask, dan tenggat setiap tugas}
+  \label{gbr:tugas}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{calendar}
+  \caption{Tampilan kalender yang menyatukan jadwal kuliah dan tenggat
+  tugas dalam satu tampilan}
+  \label{gbr:kalender}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{workspace}
+  \caption{Tampilan workspace kolaborasi untuk kerja kelompok beserta
+  progres tim dan pembagian tugas anggota}
+  \label{gbr:workspace}
+\end{figure}
+
+\clearpage
+\section*{Lampiran 2. Perencanaan Teknis}
+
+\subsection*{Rencana Anggaran Biaya (RAB)}
+\begin{table}[htbp]
+  \centering
+  \caption{Rencana anggaran biaya}
+  \small
+  \begin{tabular}{@{}clrrr@{}}
+    \toprule
+    No & Uraian & Volume & Harga Satuan (Rp) & Jumlah (Rp) \\
+    \midrule
+    1 & Domain dan hosting (1 tahun)   & 1 &  &  \\
+    2 & Kredit API AI                  & 1 &  &  \\
+    3 & Kuota internet pengembangan    & 4 &  &  \\
+    4 & Pendaftaran hak cipta (HKI)    & 1 &  &  \\
+    5 & Cetak dan jilid laporan        & 3 &  &  \\
+    \midrule
+    \multicolumn{4}{r}{Total} &  \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection*{Jadwal Kegiatan}
+\begin{table}[htbp]
+  \centering
+  \caption{Jadwal kegiatan}
+  \small
+  \begin{tabular}{@{}lcccc@{}}
+    \toprule
+    Kegiatan & Bulan 1 & Bulan 2 & Bulan 3 & Bulan 4 \\
+    \midrule
+    Analisis kebutuhan  & $\checkmark$ &              &              &              \\
+    Perancangan sistem  & $\checkmark$ & $\checkmark$ &              &              \\
+    Implementasi        &              & $\checkmark$ & $\checkmark$ &              \\
+    Pengujian           &              &              & $\checkmark$ & $\checkmark$ \\
+    Evaluasi \& laporan &              &              &              & $\checkmark$ \\
+    Artikel publikasi \& HKI &         &              &              & $\checkmark$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\clearpage
+\section*{Lampiran 3. Dokumen Pendukung Mitra (khusus TTG)}
+Surat pernyataan kerja sama, profil mitra, dan bukti kebutuhan mitra
+(kondisi lapangan) dilampirkan di sini apabila tugas akhir dikategorikan
+sebagai TTG dengan mitra.
