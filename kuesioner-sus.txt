@@ -1,0 +1,62 @@
+KUESIONER SYSTEM USABILITY SCALE (SUS)
+Aplikasi Welya: Asisten Akademik Berbasis Kecerdasan Buatan
+untuk Manajemen Tugas dan Jadwal Kuliah Mahasiswa
+
+Petunjuk pengisian:
+Berilah tanda pada salah satu angka 1 sampai 5 untuk setiap pernyataan
+berikut sesuai dengan pendapat Anda setelah mencoba aplikasi.
+1 = Sangat Tidak Setuju
+2 = Tidak Setuju
+3 = Netral
+4 = Setuju
+5 = Sangat Setuju
+
+Identitas Responden:
+Nama            :
+Program Studi   :
+Nama Universitas:
+
+Pernyataan:
+
+1.  Saya merasa akan sering menggunakan aplikasi Welya ini.
+    (1 / 2 / 3 / 4 / 5)
+
+2.  Saya merasa aplikasi ini terlalu rumit padahal seharusnya bisa dibuat
+    lebih sederhana.
+    (1 / 2 / 3 / 4 / 5)
+
+3.  Saya merasa aplikasi ini mudah digunakan.
+    (1 / 2 / 3 / 4 / 5)
+
+4.  Saya merasa membutuhkan bantuan dari orang teknis untuk dapat
+    menggunakan aplikasi ini.
+    (1 / 2 / 3 / 4 / 5)
+
+5.  Saya merasa fitur-fitur pada aplikasi ini berjalan dengan baik dan
+    saling terintegrasi.
+    (1 / 2 / 3 / 4 / 5)
+
+6.  Saya merasa ada terlalu banyak hal yang tidak konsisten pada
+    aplikasi ini.
+    (1 / 2 / 3 / 4 / 5)
+
+7.  Saya merasa kebanyakan orang akan dapat mempelajari aplikasi ini
+    dengan cepat.
+    (1 / 2 / 3 / 4 / 5)
+
+8.  Saya merasa aplikasi ini membingungkan untuk digunakan.
+    (1 / 2 / 3 / 4 / 5)
+
+9.  Saya merasa percaya diri saat menggunakan aplikasi ini.
+    (1 / 2 / 3 / 4 / 5)
+
+10. Saya perlu mempelajari banyak hal terlebih dahulu sebelum dapat
+    menggunakan aplikasi ini.
+    (1 / 2 / 3 / 4 / 5)
+
+Cara penilaian (diisi oleh peneliti):
+- Pernyataan ganjil (1, 3, 5, 7, 9)  : skor = jawaban - 1
+- Pernyataan genap (2, 4, 6, 8, 10)  : skor = 5 - jawaban
+- Jumlahkan seluruh skor, lalu kalikan 2,5 sehingga diperoleh nilai
+  akhir SUS dalam rentang 0-100.
+- Skor SUS di atas 68 menandakan tingkat kegunaan di atas rata-rata.

@@ -1,0 +1,72 @@
+{
+  "judul": "Kuesioner System Usability Scale (SUS)",
+  "aplikasi": "Welya: Asisten Akademik Berbasis Kecerdasan Buatan untuk Manajemen Tugas dan Jadwal Kuliah Mahasiswa",
+  "petunjuk": "Berilah tanda pada salah satu angka 1 sampai 5 untuk setiap pernyataan berikut sesuai dengan pendapat Anda setelah mencoba aplikasi.",
+  "skala": {
+    "1": "Sangat Tidak Setuju",
+    "2": "Tidak Setuju",
+    "3": "Netral",
+    "4": "Setuju",
+    "5": "Sangat Setuju"
+  },
+  "identitasResponden": ["Nama", "Program Studi", "Nama Universitas"],
+  "pernyataan": [
+    {
+      "nomor": 1,
+      "teks": "Saya merasa akan sering menggunakan aplikasi Welya ini.",
+      "tipe": "positif"
+    },
+    {
+      "nomor": 2,
+      "teks": "Saya merasa aplikasi ini terlalu rumit padahal seharusnya bisa dibuat lebih sederhana.",
+      "tipe": "negatif"
+    },
+    {
+      "nomor": 3,
+      "teks": "Saya merasa aplikasi ini mudah digunakan.",
+      "tipe": "positif"
+    },
+    {
+      "nomor": 4,
+      "teks": "Saya merasa membutuhkan bantuan dari orang teknis untuk dapat menggunakan aplikasi ini.",
+      "tipe": "negatif"
+    },
+    {
+      "nomor": 5,
+      "teks": "Saya merasa fitur-fitur pada aplikasi ini berjalan dengan baik dan saling terintegrasi.",
+      "tipe": "positif"
+    },
+    {
+      "nomor": 6,
+      "teks": "Saya merasa ada terlalu banyak hal yang tidak konsisten pada aplikasi ini.",
+      "tipe": "negatif"
+    },
+    {
+      "nomor": 7,
+      "teks": "Saya merasa kebanyakan orang akan dapat mempelajari aplikasi ini dengan cepat.",
+      "tipe": "positif"
+    },
+    {
+      "nomor": 8,
+      "teks": "Saya merasa aplikasi ini membingungkan untuk digunakan.",
+      "tipe": "negatif"
+    },
+    {
+      "nomor": 9,
+      "teks": "Saya merasa percaya diri saat menggunakan aplikasi ini.",
+      "tipe": "positif"
+    },
+    {
+      "nomor": 10,
+      "teks": "Saya perlu mempelajari banyak hal terlebih dahulu sebelum dapat menggunakan aplikasi ini.",
+      "tipe": "negatif"
+    }
+  ],
+  "penilaian": {
+    "pernyataanPositif": "skor = jawaban - 1",
+    "pernyataanNegatif": "skor = 5 - jawaban",
+    "nilaiAkhir": "jumlah seluruh skor dikali 2,5 (rentang 0-100)",
+    "targetSkor": 68,
+    "keterangan": "Skor SUS di atas 68 menandakan tingkat kegunaan di atas rata-rata."
+  }
+}
